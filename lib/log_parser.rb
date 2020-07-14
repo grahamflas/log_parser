@@ -31,9 +31,7 @@ class LogParser
   end
 
   def print_output
-    output.each do |h|
-      puts h.to_json
-    end
+    output.each { |h| puts h.to_json }
   end
 
   def parse_logs
