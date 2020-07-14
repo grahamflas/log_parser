@@ -4,6 +4,15 @@ require 'pry'
 class LogParser
   attr_accessor :logs, :output
 
+  ACCESSORS = %w(
+    source_ip
+    destination_ip
+    source_ip_valid
+    destination_ip_valid
+    source_ip_is_private
+    destination_ip_is_private
+  )
+
   def initialize
     @logs = []
     @output = []
@@ -12,8 +21,7 @@ class LogParser
   def run
     read_logs
     parse_logs
-    binding.pry
-    output
+    print_output
   end
 
   def read_logs
@@ -34,15 +42,13 @@ class LogParser
 
       source_ip_is_private = is_private?(source_ip)
       destination_ip_is_private = is_private?(destination_ip)
-      binding.pry
-      
+
       hash = {}
-      hash['source_ip'] = source_ip
-      hash['destination_ip'] = destination_ip
-      hash['source_ip_valid'] = source_ip_valid
-      hash['destination_ip_valid'] = destination_ip_valid
-      hash['source_ip_is_private'] = source_ip_is_private
-      hash['destination_ip_is_private'] = destination_ip_is_private
+      ACCESSORS.each do |a|
+        key = a
+        value = eval(a)
+        hash[key] = value
+      end
 
       output << hash
     end
