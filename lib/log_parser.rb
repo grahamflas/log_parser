@@ -1,3 +1,4 @@
+require 'ipaddress'
 require 'pry'
 
 class LogParser
@@ -11,7 +12,8 @@ class LogParser
   def run
     read_logs
     parse_logs
-    print_output
+    binding.pry
+    output
   end
 
   def read_logs
@@ -26,10 +28,21 @@ class LogParser
     logs.each do |l|
       source_ip = parse_src(l)
       destination_ip = parse_dst(l)
+
+      source_ip_valid = validate(source_ip)
+      destination_ip_valid = validate(destination_ip)
+
+      source_ip_is_private = is_private?(source_ip)
+      destination_ip_is_private = is_private?(destination_ip)
+      binding.pry
       
       hash = {}
       hash['source_ip'] = source_ip
       hash['destination_ip'] = destination_ip
+      hash['source_ip_valid'] = source_ip_valid
+      hash['destination_ip_valid'] = destination_ip_valid
+      hash['source_ip_is_private'] = source_ip_is_private
+      hash['destination_ip_is_private'] = destination_ip_is_private
 
       output << hash
     end
@@ -43,5 +56,18 @@ class LogParser
   def parse_dst(log)
     match = log.match(/dst=(?<destination_ip>(?:\d{1,3}\.){3}\d{1,3})/)
     match ? match[:destination_ip] : nil
+  end
+
+  def validate(ip)
+    IPAddress.valid? ip
+  end
+
+  def is_private?(ip)
+    begin
+      ip = IPAddress::IPv4.new(ip)
+      ip.private?
+    rescue ArgumentError
+      false
+    end
   end
 end
