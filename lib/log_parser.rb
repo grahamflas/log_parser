@@ -6,7 +6,7 @@ require 'pry'
 class LogParser
   attr_accessor :logs, :output
 
-  ACCESSORS = %w(
+  KEYS = %w(
     source_ip
     destination_ip
     source_ip_valid
@@ -46,10 +46,9 @@ class LogParser
       destination_ip_is_private = is_private?(destination_ip)
 
       hash = {}
-      ACCESSORS.each do |a|
-        key = a
-        value = eval(a)
-        hash[key] = value
+      KEYS.each do |k|
+        v = eval(k)
+        hash[k] = v
       end
 
       output << hash
