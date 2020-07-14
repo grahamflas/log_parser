@@ -46,10 +46,7 @@ class LogParser
       destination_ip_is_private = is_private?(destination_ip)
 
       hash = {}
-      KEYS.each do |k|
-        v = eval(k)
-        hash[k] = v
-      end
+      KEYS.each { |k| hash[k] = eval(k) }
 
       output << hash
     end
