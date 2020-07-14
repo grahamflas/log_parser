@@ -1,5 +1,7 @@
 require 'ipaddress'
+require 'json'
 require 'pry'
+
 
 class LogParser
   attr_accessor :logs, :output
@@ -29,7 +31,9 @@ class LogParser
   end
 
   def print_output
-    puts output
+    output.each do |h|
+      puts h.to_json
+    end
   end
 
   def parse_logs
