@@ -27,7 +27,7 @@ class LogParser
   end
 
   def read_logs
-    File.foreach(ARGV.first) { |line| logs << line.chomp if line.start_with?("<") }
+    File.foreach(ARGV.first) { |line| logs << line.chomp if line.start_with?(/<\d+>/) }
   end
 
   def print_output
