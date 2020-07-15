@@ -4,12 +4,12 @@ Log Parser
 
 ```sh
 {
- 'source_ip': source IP address,
- 'destination_ip': destination IP address,
- 'source_ip_valid: True/False,
- 'destination_ip_valid': True/False,
- 'source_ip_is_private': True/False,
- 'destination_ip_is_private': True/False
+ 'source_ip': "source IP address",
+ 'destination_ip': "destination IP address",
+ 'source_ip_valid: boolean,
+ 'destination_ip_valid': boolean,
+ 'source_ip_is_private': boolean,
+ 'destination_ip_is_private': boolean
 }
 ```
 
@@ -27,6 +27,7 @@ Requirements
 
 Please ensure the following gems are installed:
 
-`​gem ‘ipaddress’`
-
-`gem ‘json'`
+```sh
+gem ‘ipaddress’
+gem ‘json'
+```
