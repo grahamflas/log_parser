@@ -1,6 +1,6 @@
 Log Parser
 ===============
-*Log Parser* is a Ruby command-line application that parses CEF event log messages in a local text file. Information about each event is printed to the console and saved to a local text file, `output.txt` in the following format:
+*Log Parser* is a Ruby command-line application that parses CEF event log messages in a local text file. Information about each event is printed to the console and saved to a local text file, `output.txt`, in the following format:
 
 ```sh
 {
