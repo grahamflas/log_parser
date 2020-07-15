@@ -24,6 +24,7 @@ class LogParser
     read_logs
     parse_logs
     print_output
+    write_to_file
   end
 
   def read_logs
@@ -32,6 +33,12 @@ class LogParser
 
   def print_output
     output.each { |h| puts h.to_json }
+  end
+
+  def write_to_file
+    file = File.new('output.txt', 'w')
+    File.open('output.txt', 'w') { |f| f.write output.join("\n") }
+    file.close
   end
 
   def parse_logs
