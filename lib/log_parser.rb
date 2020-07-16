@@ -37,7 +37,11 @@ class LogParser
 
   def write_to_file
     file = File.new('output.txt', 'w')
-    File.open('output.txt', 'w') { |f| f.write output.join("\n") }
+
+    File.open('output.txt', 'w') do |f|
+      output.each { |h| f.write h.to_json + "\n" }
+    end
+
     file.close
   end
 
