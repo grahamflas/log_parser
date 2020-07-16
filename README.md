@@ -30,6 +30,6 @@ Requirements
 Please ensure the following gems are installed:
 
 ```sh
-gem ‘ipaddress’
-gem ‘json'
+gem install ipaddress
+gem install json
 ```
