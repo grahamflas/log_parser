@@ -2,12 +2,6 @@ require_relative './event.rb'
 require 'pry'
 
 class LogParser
-  attr_accessor :summaries
-
-  def initialize
-    @summaries = []
-  end
-
   def run
     read_logs
     write_to_file
