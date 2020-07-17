@@ -1,0 +1,7 @@
+{"source_ip":"50.227.44.198","destination_ip":"52.10.98.6","source_ip_valid":true,"destination_ip_valid":true,"source_ip_is_private":false,"destination_ip_is_private":false}
+{"source_ip":"37.49.231.177","destination_ip":"72.44.211.10","source_ip_valid":true,"destination_ip_valid":true,"source_ip_is_private":false,"destination_ip_is_private":false}
+{"source_ip":"52.10.98.6","destination_ip":"1.202.126.172","source_ip_valid":true,"destination_ip_valid":true,"source_ip_is_private":false,"destination_ip_is_private":false}
+{"source_ip":"257.26.100.19","destination_ip":"216.69.185.6","source_ip_valid":false,"destination_ip_valid":true,"source_ip_is_private":false,"destination_ip_is_private":false}
+{"source_ip":"50.227.44.198","destination_ip":"185.53.177.31","source_ip_valid":true,"destination_ip_valid":true,"source_ip_is_private":false,"destination_ip_is_private":false}
+{"source_ip":"192.168.1.50","destination_ip":"72.44.211.23","source_ip_valid":true,"destination_ip_valid":true,"source_ip_is_private":true,"destination_ip_is_private":false}
+{"source_ip":"10.0.1.175","destination_ip":"185.26.219.34","source_ip_valid":true,"destination_ip_valid":true,"source_ip_is_private":true,"destination_ip_is_private":false}
