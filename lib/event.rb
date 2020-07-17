@@ -13,6 +13,14 @@ class Event
     summaries.each { |s| puts s }
   end
 
+  # example of a possible extension
+  def self.private_source_ip_summaries
+    events = all.find_all { |e| e.source_ip_is_private }
+
+    summaries = events.map(&:summarize)
+    summaries.each { |s| puts s }
+  end
+
   attr_reader :event_log, :source_ip, :destination_ip,
               :source_ip_valid, :destination_ip_valid,
               :source_ip_is_private, :destination_ip_is_private
