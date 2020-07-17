@@ -9,9 +9,8 @@ class Event
   end
 
   def self.summaries
-    summaries = self.all.map { |e| e.summarize }
+    summaries = all.map(&:summarize)
     summaries.each { |s| puts s }
-    summaries
   end
 
   attr_reader :event_log, :source_ip, :destination_ip,
